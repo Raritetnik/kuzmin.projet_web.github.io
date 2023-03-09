@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block css %}../CSS/autre.css{% endblock %} {% block title %}Connexion{% endblock %} {% block body %}
+<main class="contenu-principale">
+    <div class="form_boite">
+        <span class="error">{{ errors|raw }}</span>
+        <form action="auth" class="formulaire" method="POST">
+            <div>
+                <label for="username" name="username">
+                    <p>Courriel:</p>
+                    <input type="email" name="username"> </label>
+                    <small><a href="signUp">Nouveau utilisateur?</a></small>
+            </div>
+            <div>
+                <label for="password" name="password">
+                    <p>Mot de passe:</p>
+                    <input type="password" name="password"> </label>
+                    <small><a href="">Mot de passe oublié?</a></small>
+            </div>
+            <input type="submit" class="btn-standart" value="Connexions"> </form>
+    </div>
+</main> {% endblock %}

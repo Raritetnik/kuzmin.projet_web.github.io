@@ -1,0 +1,121 @@
+@import url("global.css");
+@import url('composants/menu-principale.css');
+@import url('composants/pied-de-page.css');
+@import url('composants/formulaire.css');
+@import url('catalogue.css');
+
+.menu-compte {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-height: 600px;
+}
+
+.menu-compte .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    margin-left: 50px;
+    padding-right: 20px;
+
+    width: 200px;
+    min-width: 200px;
+    border-right: 2px solid var(--color__white-ligth);
+}
+
+.menu-compte .menu button{
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.menu-compte .menu button:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.menu-compte .contenu div>h3 {
+    padding-bottom: 15px;
+}
+
+.menu-compte .contenu input {
+    padding: 10px;
+    font-style: 14px;
+}
+
+.menu-compte .contenu {
+    margin: auto 0;
+    display: flex;
+    margin-left: 30px;
+    flex-direction: column;
+    align-self: center;
+}
+
+.cartes-liste {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    align-content: start;
+    margin: 15px;
+}
+
+.cartes-liste > .carte {
+    position: relative;
+    color: black;
+    border: 1px solid var(--color__vin);
+}
+
+.carte {
+    color: black;
+}
+
+.carte .supprimer {
+    color: darkred;
+    border-color: darkred;
+}
+
+.carte .supprimer:hover {
+    color: white;
+    border-color: darkred;
+    background-color: darkred;
+}
+
+.carte .modifier {
+    color: black;
+    border-color: gray;
+}
+
+.carte .modifier:hover {
+    color: white;
+    border-color: gray;
+    background-color: gray;
+}
+
+.carte header a{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.carte header {
+    min-height: 60%;
+    position: relative;
+}
+
+.carte header .title {
+    padding-bottom: 5px;
+}
+
+.carte header>div {
+    margin-top: auto;
+    align-items: end;
+    bottom: 20px;
+}
+
+.carte header>div small{
+    padding-left: 10px;
+}

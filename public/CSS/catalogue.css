@@ -1,0 +1,227 @@
+@import url("global.css");
+@import url("composants/menu-principale.css");
+@import url("composants/pied-de-page.css");
+
+
+.catalogue {
+    display: grid;
+    grid-template-areas:
+    "filtre trie trie trie trie trie trie"
+    "filtre grille grille grille grille grille grille"
+    "filtre grille grille grille grille grille grille"
+    ". grille grille grille grille grille grille";
+    grid-template-columns: 1fr 6fr;
+    margin: 15px;
+}
+
+.tri-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.tri-menu a {
+    margin-top: 0;
+}
+
+.tri {
+    grid-area: trie;
+    display: flex;
+}
+
+.tri i {
+    font-size: 3.5vmin;
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 700px) {
+    .tri i {
+        font-size: 30px;
+        padding: 0 15px;
+    }
+}
+
+
+/**
+ La barre de filtres
+*/
+
+.filtres {
+    grid-area: filtre;
+    min-width: 200px;
+    margin-right: 15px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.btn-filtres {
+    position: absolute;
+    display: none;
+    font-size: 4.5vmin;
+    color: white;
+    z-index: -2;
+}
+
+@media screen and (max-width: 500px) {
+    .filtres {
+        position: absolute;
+        display: none;
+    }
+    .catalogue,
+    .btn-filtres {
+        display: block;
+        font-size: 30px;
+        z-index: 2;
+    }
+
+}
+
+.filtres>* {
+    min-height: 80px;
+    max-lines: 5;
+}
+
+.filtres p {
+    margin: 10px 15px;
+}
+.filtres [type='checkbox'] {
+    margin-right: 10px;
+    transform: scale(1.4);
+}
+
+.filtres h3 {
+    background-color: var(--color__dark-vin);
+    text-align: center;
+    padding: 15px;
+    font-size: 3vmin;
+    font-family: var(--titre__font-family);
+}
+
+.filtres .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vmin;
+    font-size: 25px;
+}
+
+.filtres .content input{
+    width:100%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.filtres .content i {
+    padding: 2px;
+    font-size: 25px;
+}
+
+.filtres .content-recherche {
+    position: relative;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.filtres .content-recherche i {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+
+    background-color: transparent;
+    color: black;
+    font-size: 25px;
+    padding: 5px;
+}
+
+[name="filtre-recherche"] {
+    width: calc(100% - 4vmin);
+    font-size: 25px;
+    padding-right: 30px;
+    margin: 20px 0px;
+}
+
+.filtres .filtre-option label{
+    display: block;
+    margin: 5px 15px;
+}
+
+.filtre-option input[type='radio'] {
+    transform: scale(1.4);
+    margin-right: 10px;
+}
+
+.filtre-option input[type='radio']:checked {
+    accent-color: var(--color__dark-vin);
+}
+
+
+/**
+Catalogue des cartes dans la grille
+*/
+
+.grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+    grid-area: grille;
+    width: 100%;
+    align-content: start;
+}
+
+.grille > .carte {
+    position: relative;
+    max-height: 300px;
+    aspect-ratio: 3 / 2;
+    color: black;
+}
+
+@media screen and (max-width: 700px) {
+    .grille {
+        align-items: center;
+    }
+
+    .grille > .carte {
+        justify-self: center;
+    }
+}
+
+.carte img {
+    width: 100%;
+    height: 100px;
+    padding-bottom: 0px;
+    object-position: 0 0;
+    object-fit: cover;
+}
+
+.carte header {
+    width: calc(100%-30px);
+    background-color: var(--color__white-ligth);
+    padding: 15px;
+}
+
+.carte header > div {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carte header a {
+    padding: 0 15px;
+    border-radius: 15px;
+    color: black;
+    padding-top: 3px;
+    border: 1px solid var(--color__dark-vin);
+
+}
+
+.carte header a:hover {
+    color: white;
+    background-color: var(--color__dark-vin);
+}
+
+.title {
+    font-family: var(--titre__font-family);
+}

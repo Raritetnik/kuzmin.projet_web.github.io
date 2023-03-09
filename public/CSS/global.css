@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&family=Raleway&display=swap');
+
+
+:root {
+    --menu__font-size: 18px;
+    --titre__font-size: 3.5vmin;
+    --sous-titre__font-size: 2.7vmin;
+    --texte__font-size: 2vmin;
+    --boutons__font-size: 2.5vmin;
+    --icon__font-size: 4vmin;
+    --details__font-size: 11px;
+
+
+    --normal-texte__font-family: Arial, sans-serif;
+    --titre__font-family: 'Raleway', sans-serif;
+
+
+
+    --color__white: white;
+    --color__white-ligth: #D9D9D9;
+    --color__dark-vin: #26000A;
+    --color__darker: #363636;
+    --color__dark: rgba(20, 20, 20, 0.81);
+    --color__light-vin: #800020;
+    --color__vin: #66001A;
+    --color__select-button: rgba(251, 145, 146, 0.8);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0,0,0,.9);
+    color: white;
+
+    font-family: var(--normal-texte__font-family);
+}
+
+.btn-standart {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: var(--color__vin);
+    color: white;
+
+    font-family: var(--titre__font-family);
+    letter-spacing: .2vmin;
+    border-radius: 15px;
+    border: var(--color__vin);
+    font-size: var(--boutons__font-size);
+
+    transition: background-color .4s;
+}
+
+.btn-standart:hover {
+    background-color: var(--color__dark-vin);
+}
+
+.title {
+    font-family: var(--titre__font-family);
+}

@@ -1,0 +1,134 @@
+{% extends "base.html" %} {% block css %}CSS/catalogue.css{% endblock %} {% block title %}Catalogue{% endblock %} {% block body %}
+<main class="catalogue"> <i class="btn-filtres fa-solid fa-sliders"></i>
+    <aside class="filtres">
+        <div>
+            <h3>Recherche</h3>
+            <label class="content-recherche">
+                <input type="text" name="filtre-recherche" id="filtre-recherche"> <i class="fa-solid fa-magnifying-glass"></i> </label>
+        </div>
+        <div class="pays">
+            <h3>Pays</h3>
+            <label>
+                <input type="checkbox" name="Angleterre">Angleterre</label>
+            <label>
+                <input type="checkbox" name="Canada">Canada</label>
+            <label>
+                <input type="checkbox" name="États-Unis">États-Unis</label>
+            <label>
+                <input type="checkbox" name="Inde">Inde</label>
+            <label>
+                <input type="checkbox" name="France">France</label>
+            <label>
+                <input type="checkbox" name="Chine">Chine</label>
+            <label>
+                <input type="checkbox" name="Japon">Japon</label>
+            <label>
+                <input type="checkbox" name="Australie">Australie</label>
+        </div>
+        <div class="annees">
+            <h3>Année</h3>
+            <div class="content">
+                <label>
+                    <input type="text" name="anneeMinAnne" id="anneeMinAnne">
+                </label> <i class="fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i>
+                <label>
+                    <input type="text" name="anneeMaxAnne" id="anneeMaxAnne">
+                </label>
+            </div>
+        </div>
+        <div class="prix">
+            <h3>Prix</h3>
+            <div class="content">
+                <label>
+                    <input type="text" name="anneeMinPrix" id="anneeMinPrix">
+                </label> <i class="fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i>
+                <label>
+                    <input type="text" name="anneeMaxPrix" id="anneeMaxPrix">
+                </label>
+            </div>
+        </div>
+    </aside>
+    <section class="tri-menu">
+      {% if guest == false %}
+      <div>
+        <a href="enchere/create" class="btn-standart">Afficher une enchère</a>
+        <a href="timbre/create" class="btn-standart">Ajouter une timbre</a>
+    </div>
+      {% endif %}
+      <div class="tri">
+        <i class="fa-solid fa-arrow-down-wide-short"></i>
+        <i class="fa-solid fa-list"></i>
+        <i class="fa-solid fa-border-all"></i>
+      </div>
+    </section>
+    <section class="grille">
+
+      <!-- ***************************************************************************** -->
+      {% for enchere in encheres %}
+      <div class="carte"> <img src="{{ enchere.url }}" alt="">
+          <header>
+              <h4 class="title">{{ enchere.titre }}</h4>
+              <small><i>Date limite: {{ enchere.dateFin }}</i></small>
+              <div>
+                <a href="enchere/show/{{ enchere.idEnchere }}"><i class="fa-solid fa-hand-point-up"></i></a>
+                <h1>CA${{ enchere.prixPlancher }}.00</h1>
+              </div>
+          </header>
+      </div>
+      {% endfor %}
+      <!-- ***************************************************************************** -->
+
+      <div class="carte"> <img src="Assets/Catalogue/czech-republic-circa-1994-stamp-600w-246744580.webp" alt="">
+          <header>
+              <h4 class="title">Czech Repub. circa 1994 stamp #24576</h4>
+              <small><i>Date limite: 25 janvier 2023</i></small>
+              <div>
+                <a href="enchere/show/{{ idEnchere }}"><i class="fa-solid fa-hand-point-up"></i></a>
+                <h1>CA$12.99</h1>
+              </div>
+          </header>
+      </div>
+        <div class="carte"> <img src="Assets/Catalogue/mali-circa-1961-stamp-printed-600w-92957170.webp" alt="">
+            <header>
+                <h4 class="title">Mali Circa 1961, 1F, en couleur NEUVE #95223 </h4> <small><i>Date limite: 25 janvier 2023</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$61.99</h1></div>
+            </header>
+        </div>
+        <div class="carte"> <img src="Assets/Catalogue/milan-italy-april-21-2022-600w-2151892315.webp" alt="">
+            <header>
+                <h4 class="title">VIVIENDA C. blue OLD plage  #15321 </h4> <small><i>Date limite: 25 janvier 2023</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$721.00</h1></div>
+            </header>
+        </div>
+        <div class="carte"> <img src="Assets/Catalogue/milan-italy-january-20-2014-600w-1852248658.webp" alt="">
+            <header>
+                <h4 class="title">Mali Circa, 1Franc en couleur jaune 2014 #32351 </h4> <small><i>Date limite: 25 janvier 2023</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$82.39</h1></div>
+            </header>
+        </div>
+        <div class="carte"> <img src="Assets/Catalogue/milan-italy-january-24-2022-600w-2126397926.webp" alt="">
+            <header>
+                <h4 class="title">New Zealand 3D noir et blanc #22411 </h4> <small><i>Date limite: 8 septembre 2024</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$12.99</h1></div>
+            </header>
+        </div>
+        <div class="carte"> <img src="Assets/Catalogue/morocco-circa-1948-postage-stamp-600w-2176056605.webp" alt="">
+            <header>
+                <h4 class="title">MAROC 1.50FR blue light timbre 1948 #21112 </h4> <small><i>Date limite: 31 decembre 2023</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$412.73</h1></div>
+            </header>
+        </div>
+        <div class="carte"> <img src="Assets/Catalogue/tanzania-circa-1994-stamp-printed-600w-182933078.webp" alt="">
+            <header>
+                <h4 class="title">Tanzania TZA, timbre eleph 2010 #24122 </h4> <small><i>Date limite: 21 fevrier 2023</i></small>
+                <div><a href="enchere"><i class="fa-solid fa-hand-point-up"></i></a>
+                    <h1>CA$15.99</h1></div>
+            </header>
+        </div>
+    </section>
+</main> {% endblock %}

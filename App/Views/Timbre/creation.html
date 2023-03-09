@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block css %}../CSS/autre.css{% endblock %}
+{% block title %}Creation timbre{% endblock %}
+
+{% block body %}
+<main class="contenu-principale">
+    <div class="form_boite">
+        <span>{{ error|raw }}</span>
+        <form action="store" class="formulaire" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="titre" name="titre">
+                    <p>Titre de timbre:</p>
+                    <input type="text" name="titre">
+                </label>
+            </div>
+            <div>
+                <label for="dateCreation" name="dateCreation">
+                    <p>Date de création de timbre:</p>
+                    <input type="datetime-local" name="dateCreation">
+                </label>
+            </div>
+            <div>
+                <label for="couleur" name="couleur">
+                    <p>Couleur:</p>
+                    <input type="text" name="couleur">
+                </label>
+            </div>
+            <div>
+                <label for="pays" name="pays">
+                    <p>Pays de création:</p>
+                    <input type="text" name="pays">
+                </label>
+            </div>
+            <div>
+                <label for="etat" name="etat">
+                    <p>Condition:</p>
+                    <input type="text" name="etat">
+                </label>
+            </div>
+            <div>
+                <label for="tirage" name="tirage">
+                    <p>Tirage:</p>
+                    <input type="text" name="tirage">
+                </label>
+            </div>
+            <div>
+                <label for="dimensions" name="dimensions">
+                    <p>Dimensions:</p>
+                    <input type="text" name="dimensions">
+                </label>
+            </div>
+            <div>
+                <label for="certifier" name="certifier">
+                    <p>Certification:</p>
+                    <select name="certifier" id="certifier">
+                        <option value="1">Oui</option>
+                        <option value="0">Non</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="image" name="image">
+                    <p>Image de timbre:</p>
+                    <input type="file" name="imageFichier" id="imageFichier" value="">
+                </label>
+            </div>
+            <div>
+                <input type="submit" class='btn-standart' value="Sauvegarder">
+            </div>
+        </form>
+    </div>
+</main> {% endblock %}

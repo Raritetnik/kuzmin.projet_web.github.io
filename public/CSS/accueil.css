@@ -1,0 +1,407 @@
+@import url('global.css');
+@import url('composants/menu-principale.css');
+@import url("composants/pied-de-page.css");
+
+/*******************************
+/* Banner
+*********************************/
+
+.contenu-principale header {
+    min-width: 100%;
+    min-height: 70vmin;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    color: black;
+    background-image: url("../Assets/banner/many_stamps_1.webp");
+    background-size: cover;
+}
+
+.contenu-principale header::before {
+    content: "";
+    position: absolute;
+    min-height: 100%;
+    min-width: 70%;
+    background-image: linear-gradient(to right, black, transparent);
+}
+
+
+.contenu-principale section {
+    min-width: calc(100% - 80px);
+    min-height: 18vmin;
+    padding: 20px 40px;
+}
+
+.contenu-principale .titre {
+    color: white;
+    z-index: 2;
+    max-width: 45ch;
+    margin-left: 4vmin;
+}
+
+.contenu-principale .titre>* {
+    margin-bottom: 20px;
+}
+
+/**
+
+ Section de recherche et action rapide
+
+ */
+.recherche {
+    display: grid;
+    grid-template-columns: 3.5fr 2fr 1.5fr;
+    min-height: 20vmin;
+}
+
+.recherche h2 {
+    margin-bottom: 15px;
+}
+
+
+.recherche>:not(:last-child) {
+    border-right: 2px solid white;
+}
+    /* Recherche */
+.recherche>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 30px;
+}
+.recherche>div:nth-child(1) {
+    padding-left: 0;
+}
+.barre-recherche {
+    display: flex;
+    align-items: center;
+}
+
+.barre-recherche button{
+    position: absolute;
+    left: 1vmin;
+    top: 0.5vmin;
+    color: black;
+    font-size: 4.5vmin;
+}
+
+.barre-recherche label{
+    position: relative;
+    margin-right: 20px;
+}
+
+.barre-recherche i {
+    background-color: transparent;
+    position: absolute;
+    display: inline-block;
+    color: black;
+    right: 0;
+    top: 0;
+    font-size: 4.5vmin;
+    padding: 0.6vmin;
+}
+
+[name='recherche'] {
+    min-width: 60vmin;
+    font-size: 4.5vmin;
+}
+[name='categories'] {
+    background-color: transparent;
+    color: var(--color__white-ligth);
+    border: 0 transparent solid;
+
+    font-family: var(--titre__font-family);
+    font-size: 3vmin;
+}
+
+[name='categories'] option {
+    color: black;
+}
+@media screen and (max-width: 900px) {
+    .recherche {
+        display: flex;
+        flex-direction: column;
+    }
+
+    [name='recherche'] {
+        padding-left: none;
+    }
+
+    .recherche>:not(:last-child) {
+        border-right: none;
+        border-bottom: 2px solid white;
+    }
+
+    .recherche>div {
+        align-items: center;
+    }
+}
+
+/**
+
+ Des carte offres populaires
+
+ */
+.offres {
+    min-height: 420px;
+    background-color: var(--color__dark);
+}
+.carroussel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+.carroussel .carte {
+    text-align: center;
+    position: relative;
+    width: 35vmin;
+    aspect-ratio: 2 / 4;
+    background-color: rgba(255,255,255,0.6);
+    overflow:hidden;
+
+    transition: transform 1s, border 1s ease;
+}
+
+.carroussel .carte img {
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.carroussel .carte::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-image: linear-gradient(to top, black, transparent);
+    min-height: 100%;
+    aspect-ratio: 2 / 2;
+}
+
+.carroussel .carte .description {
+    position: absolute;
+    font-weight: bold;
+    bottom: 0;
+    font-size: 2vmin;
+}
+
+.carroussel .carte .description>* {
+    padding: 10px;
+}
+
+.carroussel .carte .description>:not(:last-child) {
+    border-bottom: 1px white solid;
+}
+
+.carroussel .carte .description>div {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--normal-texte__font-family);
+}
+
+
+.carroussel .carte:hover {
+    transform: scale(1.1);
+    border: #D9D9D9 solid 2px;
+}
+@media screen and (max-width: 900px) {
+    .carroussel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 15px;
+    }
+
+    .carroussel .carte {
+        aspect-ratio: 2 / 3;
+    }
+
+}
+
+/**
+
+ Biographie de Lord
+
+*/
+
+.biographie {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: var(--color__dark);
+}
+
+.biographie img {
+    max-width: 60vmin;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.biographie p  {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .biographie  {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .biographie img {
+        margin: 0 auto;
+    }
+}
+
+/**
+ Catégories populaires
+*/
+
+.actualités {
+    display: grid;
+    grid-template-areas:
+    "a a b"
+    "a a c";
+    gap: 15px;
+}
+
+.actualités .top {
+    grid-area: b;
+}
+
+.actualités .bot {
+    grid-area: c;
+}
+
+.actualités .affiche-principale {
+    grid-area: a;
+}
+
+.actualités .affiche,
+.actualités .affiche-principale {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    border: var(--color__dark-vin) solid 2px;
+    border-radius: 5px;
+    color: black;
+}
+.actualités img {
+    max-width: 30vmin;
+    object-fit: cover;
+}
+.actualités .affiche {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    max-height: 100%;
+}
+
+.affiche .image-article {
+    text-align: center;
+    flex: 1 2;
+    object-fit: cover;
+}
+
+.affiche-principale {
+    grid-area: a;
+    max-width: 80vmin;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.affiche-principale img{
+    max-width: 70%;
+    align-self: center;
+}
+.affiche-principale .image-article {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+}
+.affiche-principale .image-article>div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.affiche-principale .fa-user-tie{
+    font-size: 10vmin;
+    padding-top: 6vmin;
+    padding-bottom: 2vmin;
+}
+
+.actualités .description>* {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .actualités {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .affiche-principale {
+        max-width: none;
+    }
+}
+
+/**
+    Abonnement rapide
+*/
+section.abandonner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0px;
+    margin: 0;
+}
+
+.abandonner h2 {
+    padding-bottom: 15px;
+}
+
+.abandonner div:first-child {
+    background-color: #800020;
+    margin: 0;
+    padding: 15px;
+    border-radius: 80% 100% 100% 80% / 0% 100% 100% 0%   ;
+}
+.barre-suivre>input {
+    font-size: 2.5vmin;
+    padding: 1vmin;
+    margin: 0;
+}
+
+[name='suivre_courriel'] {
+    min-width: 60vmin;
+}
+
+[name='suivre_sms'] {
+    min-width: 30vmin;
+}
+
+.barre-suivre [type='button'] {
+    background-color: var(--color__dark-vin);
+    color: white;
+    border: .4vmin var(--color__dark-vin) solid;
+}
+
+.abandonner>div:last-child {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    section.abandonner {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+}

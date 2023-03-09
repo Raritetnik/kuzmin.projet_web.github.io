@@ -1,0 +1,154 @@
+{% extends "base.html" %} {% block css %}CSS/accueil.css{% endblock %} {% block title %}Accueil{% endblock %} {% block body %}
+<main class="contenu-principale">
+    <header>
+        <div class="titre">
+            <h1>Bienvenu sur les enchères de <br>Lord Stampee</h1>
+            <h2>Voir nos offres exceptionnels</h2> <small>Participer à une enchère est plus simple que vous le croyez</small> <a href="catalogue" class="btn-standart">Catalogue</a> </div>
+    </header>
+    <section class="recherche">
+        <div>
+            <h2>À la recherche de quelque chose en particulier?</h2>
+            <form class="barre-recherche" action="#">
+                <label> <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="recherche" id="recherche" placeholder="Saisir le texte..."> </label>
+                <select name="categories">
+                    <option>Catégories</option>
+                    <option>Timbres</option>
+                    <option>Nouvelles</option>
+                    <option>Évenements</option>
+                </select>
+            </form>
+        </div>
+        <div class="action-rapide">
+            <h2>Nouveau utilisateur?</h2> <a href="membre/signUp" class="btn-standart">Créer compte</a> </div>
+        <div class="action-rapide">
+            <h2>Déjà un compte?</h2> <a href="membre/login" class="btn-standart">Connexion</a> </div>
+    </section>
+    <section class="offres">
+        <h2>Les offres populaires</h2>
+        <div class="carroussel">
+            <div class="carte"> <img src="Assets/banner/Stamp_US_1957_4c_flag.webp" alt="">
+                <div class="description">
+                    <h3>U.S drapeau Etat-Unis, 4$ #63122 bleu rouge</h3>
+                    <div>
+                        <p>Prix Actuelle</p>
+                        <p>122.44$</p>
+                    </div>
+                    <div>
+                        <p>Temps restant</p>
+                        <p>5j 2h 38m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carte"> <img src="Assets/banner/download.webp" alt="">
+                <div class="description">
+                    <h3>Saint Louis deux ours, 20C #423112 rouge vin</h3>
+                    <div>
+                        <p>Prix Actuelle</p>
+                        <p>122.44$</p>
+                    </div>
+                    <div>
+                        <p>Temps restant</p>
+                        <p>5j 2h 38m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carte"> <img src="Assets/banner/ezgif.com-gif-maker.webp" alt="">
+                <div class="description">
+                    <h3>Postal & Inland Revenue 1875, 1Penny #331412 vin foncé</h3>
+                    <div>
+                        <p>Prix Actuelle</p>
+                        <p>122.44$</p>
+                    </div>
+                    <div>
+                        <p>Temps restant</p>
+                        <p>5j 2h 38m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carte"> <img src="Assets/banner/180px-Stamp_Gibraltar_1889_10c.webp" alt="">
+                <div class="description">
+                    <h3>Gibraltar 1889, 10C #423112 rouge vin</h3>
+                    <div>
+                        <p>Prix Actuelle</p>
+                        <p>122.44$</p>
+                    </div>
+                    <div>
+                        <p>Temps restant</p>
+                        <p>5j 2h 38m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carte"> <img src="Assets/banner/car.webp" alt="">
+                <div class="description">
+                    <h3>URSS Vieille voiture 1925, 5RUB #14552 bleu</h3>
+                    <div>
+                        <p>Prix Actuelle</p>
+                        <p>122.44$</p>
+                    </div>
+                    <div>
+                        <p>Temps restant</p>
+                        <p>5j 2h 38m</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Actualités</h2>
+        <div class="actualités">
+            <div class="affiche-principale">
+                <div class="image-article"> <img src="Assets/londres_830.webp" width="400" height="250" alt="">
+                    <div> <i class="fa-solid fa-user-tie"></i> <small><i>Par Lord Stampee</i></small> <a href="" class="btn-standart">Suite</a> </div>
+                </div>
+                <div class="description">
+                    <h1>Début des enchères à Londre</h1>
+                    <p>Les maisons de vente aux enchères sont une des meilleures et les plus fiables façons de vendre ou acheter quelques articles philatéliques. C'est la raison pourquoi la popularité de ces établissements grandit constamment et de plus en plus d'enthousiastes de timbre tournent vers eux pour enrichir leurs collections ou se séparer avec certains de leurs articles philatéliques précieux.</p>
+                    <p> Cet article a l'intention de vous donner une vue brève sur les maisons de vente aux enchères importantes dont les services seront utiles pour tous ceux qui sont philatélistes et sont amoureux de ce hobby.</p>
+                </div>
+            </div>
+            <div class="affiche top">
+                <div class="image-article"> <img src="Assets/world-of-stamps2.webp" width="250" height="150" alt="">
+                    <div> <i class="fa-solid fa-user-tie"></i> <small><i>Par William H. Gross</i></small> </div> <a href="" class="btn-standart">Suite</a> </div>
+                <div class="description">
+                    <h1>Every Stamp Tells a Story</h1>
+                    <p>Named after its primary benefactor, the William H. Gross Stamp Gallery is the world’s largest gallery dedicated to philately. It provides an experience available nowhere else and offers something for everyone, from casual visitors to experienced collectors.</p>
+                </div>
+            </div>
+            <div class="affiche bot">
+                <div class="image-article"> <img src="Assets/3-dsc-2712.webp" width="250" height="150" alt="">
+                    <div> <i class="fa-solid fa-user-tie"></i> <small><i>Par Lord Stampee</i></small> </div> <a href="" class="btn-standart">Suite</a> </div>
+                <div class="description">
+                    <h1>Museum of Stamps and Coins</h1>
+                    <p>The Museum of Stamps and Coins is located in the Fontvieille section of Monaco. It tells the postal history of the principality, and contains a display of Monegasque money dating to 1640.</p>
+                    <p>An elite philatelic club, the Club de Monte-Carlo, was established in 1999 and is headquartered at the museum. The club showcases rare material at the museum on a bi-annual basis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="biographie"> <img src="Assets/Lord-M-A-Stampee.webp" width="400" height="400" alt="">
+        <div class="text-bloc">
+            <h1>Lord Reginald Stampee</h1>
+            <p><i>Philatéliste</i></p>
+            <p>Lord Reginald Stampee III né le 6 août 1950 à Londres est un des plus célèbres philatélistes anglais.</p>
+            <p>Ses collections de timbres ont été les plus complètes connues pour l'époque classique (timbres émis avant 1900), avec une passion pour les émissions d'avant 1870. Elles ont notamment concerné les provinces canadiennes et la Confédération du Canada, la Suisse, la colonie du Cap, Ceylan, le Gambie, Maurice, l'Argentine et l'Uruguay. Pour l'histoire postale des États-Unis, sa collection est une référence pour les affranchissements dans l'Ouest du pays.</p>
+            <p>Membre actif du Collectors Club of New York, Theodore Steinway et lui ont permis le développement de cette association. Juge international pendant trois décennies, il est le commissaire des expositions philatéliques internationales de 1980. En mars 1985 à New York, Theodore Steinway, plusieurs philatélistes et lui fondent la Philatelic Foundation, institution éducative à but non lucratif qui se donne pour but des travaux d'expertise, de recherches et de publications philatéliques. Ses collections et celles de sa fille ont été dispersés par la maison aux enchères Harmer's entre 1968 et 1971, 1989 et 1992 et en 1997.</p>
+            <p>Les timbres sont sa passion et Lord Stampee veut offrir au reste du monde cette passion via sa plateforme.</p>
+            <p>« Pour le vrai Philatéliste, il n'y a que 3 événements qui comptent : chercher, avoir et classer. » - Lord Stampee...</p> <a href="" class="btn-standart">Lire la Suite</a> </div>
+    </section>
+    <section class="abandonner">
+        <div>
+            <h2>Abonnez-vous à des nouvelles offres!</h2>
+            <div class="barre-suivre">
+                <input type="text" placeholder="Courriel" name="suivre_courriel">
+                <input type="button" value="S'Abandonner"> </div>
+        </div>
+        <div>
+            <h2>Restez toujours à jour!</h2>
+            <div class="barre-suivre">
+                <input type="text" placeholder="Téléphone" name="suivre_sms">
+                <input type="button" value="S'Abandonner"> </div>
+        </div>
+    </section>
+    <script src="{{path}}/script/accueil-rech.js"></script>
+</main> {% endblock %}

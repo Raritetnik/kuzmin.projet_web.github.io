@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block css %}../CSS/autre.css{% endblock %} {% block title %}Connexion{% endblock %} {% block body %}
+<main class="contenu-principale">
+    <div class="form_boite">
+        <span>{{ error|raw }}</span>
+        <form action="store" class="formulaire" method="POST">
+            <div>
+            <label for="nom" name="nom">
+                <p>Nom:</p>
+                <input type="text" name="nom"> </label>
+            </div>
+            <div>
+            <label for="prenom" name="prenom">
+                <p>Prenom:</p>
+                <input type="text" name="prenom"> </label>
+            </div>
+            <div>
+            <label for="adresse" name="adresse">
+                <p>Adresse:</p>
+                <input type="text" name="adresse"> </label>
+            </div>
+            <div>
+            <label for="zipCode" name="zipCode">
+                <p>Code postale:</p>
+                <input type="text" name="zipCode"> </label>
+            </div>
+            <div>
+            <label for="phone" name="phone">
+                <p>Téléphone:</p>
+                <input type="text" name="phone"> </label>
+            </div>
+            <div>
+                <label for="username" name="username">
+                    <p>Courriel:</p>
+                    <input type="email" name="username"> </label>
+            </div>
+            <div>
+            <label for="password" name="password">
+                <p>Mot de passe:</p>
+                <input type="password" name="password"> </label>
+            </div>
+            <input type="submit" class="btn-standart" value="Sauvegarder"> </form>
+    </div>
+</main> {% endblock %}
+
+

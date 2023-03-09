@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block css %}../CSS/autre.css{% endblock %}
+{% block title %}Creation enchere{% endblock %}
+
+{% block body %}
+<main class="contenu-principale">
+    <div class="form_boite">
+        <form action="store" class="formulaire" method="POST">
+        <div>
+            <label for="Timbre_id" name="Timbre_id">
+                <p>Selection de timbre:</p>
+                <select name="Timbre_id" id="Timbre_id"> {% if timbres %} {% for timbre in timbres %}
+                    <option value="{{ timbre.idTimbre }}">{{timbre.titre}}</option> {% endfor %} {% endif %} </select>
+            </label>
+        </div>
+        <div>
+            <label for="dateDebut" name="dateDebut">
+                <p>Date de début:</p>
+                <input type="datetime-local" name="dateDebut"> </label>
+            </div>
+            <div>
+            <label for="dateFin" name="dateFin">
+                <p>Date de fin:</p>
+                <input type="datetime-local" name="dateFin"> </label>
+            </div>
+            <div>
+            <label for="prixPlancher" name="prixPlancher">
+                <p>Prix plancher:</p>
+                <input type="text" name="prixPlancher"> </label>
+            </div>
+            <div>
+            <label for="quantiteMise" name="quantiteMise">
+                <p>Quantité de mise:</p>
+                <input type="text" name="quantiteMise"> </label>
+            </div>
+            <div>
+                <input type="submit" class='btn-standart' value="Sauvegarder">
+            </div>
+        </form>
+    </div>
+</main> {% endblock %}

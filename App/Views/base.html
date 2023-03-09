@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="preload" href="{{path}}/Assets/banner/many_stamps_1.webp" as="image">
+    <link rel="preload" href="{{path}}/Assets/timbre_1/timbre_1.1.webp" as="image">
+    <link rel="preload" href="{{path}}/Assets/stamps.webp" as="image">
+    <script src="https://kit.fontawesome.com/62104b1a3a.js" crossorigin="anonymous" async></script>
+    <link rel="stylesheet" type="text/css" href="{% block css %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <header class="menu-principale">
+        <div class="menu-logo">
+             <img src="{{path}}/Assets/stamps.webp" height='50' width="50" class='logo' alt="">
+        </div>
+        <i class="fa-solid fa-bars"></i>
+         <nav>
+            <a href="{{path}}" class="menu-item">Accueil</a>
+            <a href="{{path}}" class="menu-item">Information</a>
+            <a href="{{path}}/catalogue" class="menu-item">Enchères</a>
+            {% if guest %}
+                <a href="{{path}}/membre/login" class="menu-item">Login</a>
+            {% else %}
+                <a href="{{path}}/membre" class="menu-item">Compte</a>
+                <a href="{{path}}/membre/logout" class="menu-item">Logout</a>
+            {% endif %}
+         </nav>
+     </header>
+    {% block body %}
+    {% endblock %}
+    <footer class="pied-de-page">
+        <section class="info"> <img src="{{ path }}/Assets/stamps.webp" width="150" height="150" class='logo' alt="">
+            <p>1888, Windsor St.Londres, Royaume-Unis EC2R EA4</p>
+            <p>Tel : 514 555 2332</p>
+            <p>Email : lordstampee@stamp.uk</p>
+        </section>
+        <section class="menu">
+            <nav>
+                <div>
+                    <h3>Actualités</h3> <a href="#">Timbres</a> <a href="#">Enchères</a> <a href="#">Vie de Lord</a> </div>
+                <div>
+                    <h3>Aide</h3> <a href="#">Modifier mon profil</a> <a href="#">Placer une offre</a> <a href="#">Termes et conditions</a> <a href="#">Contacter WebMester</a> </div>
+                <div>
+                    <h3>À propos</h3> <a href="#">Vie de Lord Stampee</a> <a href="#">Gestion des enchères</a> </div>
+            </nav>
+            <div>
+                <p>© 2022, Stampee.com. Tous les droits sont réservés.</p>
+                <div class="liens"> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-facebook"></i> <i class="fa-regular fa-envelope"></i> <i class="fa-brands fa-twitter"></i> </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

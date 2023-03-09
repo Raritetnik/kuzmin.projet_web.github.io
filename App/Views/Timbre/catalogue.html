@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% block css %}CSS/catalogue.css{% endblock %} {% block title %}Catalogue{% endblock %} {% block body %}
+<main class="catalogue"> <i class="btn-filtres fa-solid fa-sliders"></i>
+    <aside class="filtres">
+        <div>
+            <h3>Recherche</h3>
+            <label class="content-recherche">
+                <input type="text" name="filtre-recherche" id="filtre-recherche" value="{{vars.recherche}}"> <i class="fa-solid fa-magnifying-glass"></i> </label>
+        </div>
+        <div class="filtre-option">
+            <h3>Pays</h3>
+            <label>
+                <input type="radio" name="pays" id="">Tout</label>
+            {% for unPays in pays %}
+            <label>
+                {% if vars.pays == unPays.pays %}
+                <input type="radio" name="pays" id="{{ unPays.pays }}" checked>{{ unPays.pays|capitalize }}
+                {% else %}
+                <input type="radio" name="pays" id="{{ unPays.pays }}">{{ unPays.pays|capitalize }}
+                {% endif %}
+            </label>
+            {% endfor %}
+        </div>
+        <div class="filtre-option">
+            <h3>Couleurs</h3>
+            <label>
+                <input type="radio" name="couleur" id="">Tout</label>
+            {% for couleur in couleurs %}
+            <label>
+                {% if vars.couleur == couleur.couleur %}
+                <input type="radio" name="couleur" id="{{ couleur.couleur }}" checked>{{ couleur.couleur|capitalize }}
+                {% else %}
+                <input type="radio" name="couleur" id="{{ couleur.couleur }}">{{ couleur.couleur|capitalize }}
+                {% endif %}
+            </label>
+            {% endfor %}
+        </div>
+        <div class="filtre-option">
+            <h3>Condition</h3>
+            <label>
+                <input type="radio" name="etat" id="">Tout</label>
+            {% for etat in etats %}
+            <label>
+                {% if vars.etat == etat.etat %}
+                <input type="radio" name="etat" id="{{ etat.etat }}" checked>{{ etat.etat|capitalize }}
+                {% else %}
+                <input type="radio" name="etat" id="{{ etat.etat }}">{{ etat.etat|capitalize }}
+                {% endif %}
+            </label>
+            {% endfor %}
+        </div>
+        <div class="annees">
+            <h3>Année</h3>
+            <div class="content" id="annee">
+                <label>
+                    <input type="text" name="anneeMinAnne" id="anneeMinAnne">
+                </label> <i class="fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i>
+                <label>
+                    <input type="text" name="anneeMaxAnne" id="anneeMaxAnne">
+                </label>
+            </div>
+        </div>
+        <div class="prix">
+            <h3>Prix</h3>
+            <div class="content" id="prix">
+                <label>
+                    <input type="text" name="anneeMinPrix" id="anneeMinPrix">
+                </label> <i class="fa-solid fa-arrow-left"></i> <i class="fa-solid fa-arrow-right"></i>
+                <label>
+                    <input type="text" name="anneeMaxPrix" id="anneeMaxPrix">
+                </label>
+            </div>
+        </div>
+    </aside>
+    <section class="tri-menu">
+      {% if guest == false %}
+      <div>
+        <a href="enchere/create" class="btn-standart">Afficher une enchère</a>
+        <a href="timbre/create" class="btn-standart">Ajouter une timbre</a>
+    </div>
+      {% endif %}
+      <div class="tri">
+        Trier par titre:<i class="fa-solid fa-arrow-down-wide-short" id="btn-trier"></i>
+        <!--<i class="fa-solid fa-list"></i>
+        <i class="fa-solid fa-border-all"></i>-->
+      </div>
+    </section>
+    <section class="grille">
+
+      <!-- ***************************************************************************** -->
+      {% for timbre in timbres %}
+      <div class="carte"> <img src="{{ timbre.url }}" alt="">
+          <header>
+              <h4 class="title">{{ timbre.titre }}</h4>
+              <small><i>Date limite: {{ timbre.dateFin }}</i></small>
+              <div>
+                <a href="timbre/show/{{ timbre.idTimbre }}"><i class="fa-solid fa-hand-point-up"></i></a>
+                <h1>CA${{ timbre.prixPlancher|number_format(2, '.', ',') }}</h1>
+              </div>
+          </header>
+      </div>
+      {% endfor %}
+      <!-- ***************************************************************************** -->
+    </section>
+    <script src="{{path}}/script/catalogue.js"></script>
+</main> {% endblock %}

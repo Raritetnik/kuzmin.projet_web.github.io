@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block css %}{{path}}/CSS/carte.css{% endblock %} {% block title %}Enchere{% endblock %}
+
+{% block body %}
+<main class="contenu-principale">
+    <section class="affichage-images">
+        <div class="image-principale"> <i class="fa-solid fa-arrow-left"></i>
+            <img src="{{ timbre.url }}" alt="" width="700px"> <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <!--<div class="image-carrousel">
+            <img src="{{path}}/Assets/timbre_1/timbre_1.2.webp" alt="" class="carrousel-item">
+            <img src="{{path}}/Assets/timbre_1/timbre_1.3.webp" alt="" class="carrousel-item">
+        </div>-->
+    </section>
+    <section class="affichage-description">
+        <form action="../edit/{{timbre.idTimbre}}" method="POST" enctype="multipart/form-data">
+        <header>
+            <div> <a href="{{path}}/catalogue"><i class="fa-solid fa-caret-left"></i> Retour dans le catalogue</a> </div>
+            <div> <a href="#"><i class="fa-regular fa-star"></i></a> <a href="#"><i class="fa-regular fa-bell"></i></a> </div>
+        </header>
+        <article>
+            <div class="description-titre">
+                <h1><input type="text" name="titre" id="titre" value="{{ timbre.titre }}"></h1>
+                <h3>#{{ timbre.idTimbre }}</h3> </div>
+            <div class="description-prix">
+                <div class="prix-liste">
+                    <div>
+                        <h4><i>Prix plancher:</i></h4>
+                        <h1>CA$ {{ timbre.prixPlancher }}</h1> </div>
+                </div>
+                <div class="action">
+                    <button>Miser</button>
+                    <button>Acheter</button>
+                </div>
+            </div>
+            <div class="description-info">
+                <h4><i>Dates des enchères:</i></h4>
+                <h2>{{ timbre.dateDebutName }} - {{ timbre.dateFinName }}</h2>
+                <!--<h2><input type="datetime-local" name="dateDebut" id="dateDebut" value="{{ timbre.dateDebut }}"> - <input type="datetime-local" name="dateFin" id="dateFin" value="{{ timbre.dateFin }}"></h2>-->
+
+                <h4><i>Couleur:</i> <input type="text" name="couleur" value="{{ timbre.couleur }}"></h5>
+
+                <h4><i>Dimensions:</i> <input type="text" name="dimensions" value="{{ timbre.dimensions }}"></h5>
+
+                <h4><i>Pays:</i> <input type="text" name="pays" value="{{ timbre.pays }}"></h4>
+            </div>
+        </article>
+        <footer>
+            <div>
+                <h5>Shipping:</h5>
+                <div>
+                    <p>USD 5.85 par FedEx ou Purolator</p>
+                    <p>Le prix peut varié l'adresse se trouve hors Canada </p>
+                    <p>Localisé à: Kingston, Ontario, Canada</p>
+                </div>
+            </div>
+            <div>
+                <h5>Delivery:</h5>
+                <p>Date de reception estimé entre 26 decembre 2023 et 12 janvier 2024</p>
+            </div>
+            <div>
+                <h5>Payments:</h5>
+                <div> <i class="fa-brands fa-paypal"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-google-pay"></i> <i class="fa-brands fa-cc-apple-pay"></i> </div>
+            </div>
+            <div>
+                <h5>Returns:</h5>
+                <p>Aucune retour est accepté</p>
+            </div>
+            <input type="submit" value="Sauvegarder" class="btn-standart">
+        </footer>
+    </form>
+    </section>
+</main> {% endblock %}

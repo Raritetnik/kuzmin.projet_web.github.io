@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block css %}{{path}}/CSS/carte.css{% endblock %} {% block title %}Enchere{% endblock %}
+
+{% block body %}
+<main class="contenu-principale">
+    <section class="affichage-images">
+        <div class="image-principale"> <i class="fa-solid fa-arrow-left"></i>
+            <img src="{{ timbre.url }}" alt="" width="700px"> <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <!--<div class="image-carrousel">
+            <img src="{{path}}/Assets/timbre_1/timbre_1.2.webp" alt="" class="carrousel-item">
+            <img src="{{path}}/Assets/timbre_1/timbre_1.3.webp" alt="" class="carrousel-item">
+        </div>-->
+    </section>
+    <section class="affichage-description">
+        <header>
+            <div> <a href="{{path}}/catalogue"><i class="fa-solid fa-caret-left"></i> Retour dans le catalogue</a> </div>
+            <div>
+                {% if estfavoris %}
+                <i class="fa-solid fa-star" data-idEnchere="{{timbre.Enchere_id}}" id="favoris"></i>
+                {% else %}
+                <i class="fa-regular fa-star" data-idEnchere="{{timbre.Enchere_id}}" id="favoris"></i>
+                {% endif %}
+                <i class="fa-regular fa-bell" id="notification"></i>
+            </div>
+        </header>
+        <article>
+            <div class="description-titre">
+                <h1>{{ timbre.titre }}</h1>
+                <h3>#{{ timbre.idTimbre }}</h3> </div>
+            <div class="description-prix">
+                <div class="prix-liste">
+                    <div>
+                        <h4><i>Prix mise:</i></h4>
+                        <h1>CA$ {{ mise.prixMise|number_format(2, '.', ',') }}</h1>
+                        <small>Par: {{ mise.Prenom }} {{ mise.Nom }}</small>
+                        <h4><i>Prix plancher:</i></h4>
+                        <h1>CA$ {{ timbre.prixPlancher|number_format(2, '.', ',') }}</h1>
+                    </div>
+                </div>
+                <form action="../miser/{{ timbre.idTimbre }}" class="action" method="POST">
+                    {% if guest %}
+
+                    {% else %}
+                        <input type="number" name="prixMise" class="prixMise" min="0.00" max="10000.00" step="0.01" value="{{mise.prixMise}}"/>
+                        <input type="submit" class="btn-standart" id="miserAction" value="Miser">
+                        <input type="submit" class="btn-standart" id="acheterAction" value="Acheter">
+                        <input type="hidden" name="Enchere_id" value="{{timbre.Enchere_id}}">
+                    {% endif %}
+                </form>
+            </div>
+            <div class="description-info">
+                <h4><i>Dates des enchères:</i></h4>
+                <h2>{{ timbre.dateDebut }} <br> {{ timbre.dateFin }}</h2> </div>
+
+                <h4><i>Couleur:</i> {{ timbre.couleur }}</h5>
+
+                <h4><i>Dimensions:</i> {{ timbre.dimensions }}</h5>
+
+                <h4><i>Pays:</i> {{ timbre.pays }}</h4>
+        </article>
+        <footer>
+            <div>
+                <h5>Shipping:</h5>
+                <div>
+                    <p>USD 5.85 par FedEx ou Purolator</p>
+                    <p>Le prix peut varié l'adresse se trouve hors Canada </p>
+                    <p>Localisé à: Kingston, Ontario, Canada</p>
+                </div>
+            </div>
+            <div>
+                <h5>Delivery:</h5>
+                <p>Date de reception estimé entre 26 decembre 2023 et 12 janvier 2024</p>
+            </div>
+            <div>
+                <h5>Payments:</h5>
+                <div> <i class="fa-brands fa-paypal"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-google-pay"></i> <i class="fa-brands fa-cc-apple-pay"></i> </div>
+            </div>
+            <div>
+                <h5>Returns:</h5>
+                <p>Aucune retour est accepté</p>
+            </div>
+        </footer>
+    </section>
+</main>
+<script src="{{path}}/script/favoris.js"></script>
+{% endblock %}

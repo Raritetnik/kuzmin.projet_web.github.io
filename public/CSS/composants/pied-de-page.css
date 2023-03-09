@@ -1,0 +1,84 @@
+/*******************************
+/* Footer
+*********************************/
+
+.pied-de-page {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--color__dark-vin);
+    padding: 3vmin 5vmin;
+}
+
+.pied-de-page nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.pied-de-page .menu h3 {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px white  solid;
+    color: rgba(255,255,255,0.5);
+}
+
+.pied-de-page .menu a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--color__white-ligth);
+
+    transition: color .4s;
+}
+
+.pied-de-page .menu a:hover {
+    color: var(--color__select-button);
+    text-decoration: underline;
+}
+
+.pied-de-page nav>div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 15px;
+}
+
+.pied-de-page .logo {
+    margin: 15px 10vmin;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+}
+
+.pied-de-page .liens {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pied-de-page .liens>i {
+    font-size: 5vmin;
+    margin-right: 15px;
+}
+
+.pied-de-page .liens>i:hover {
+    color: var(--color__select-button);
+}
+
+.pied-de-page .menu {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    margin: 0 30px;
+}
+
+.pied-de-page .menu>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .pied-de-page {
+        display: flex;
+        flex-direction: column;
+    }
+}

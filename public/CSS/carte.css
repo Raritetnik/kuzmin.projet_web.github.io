@@ -1,0 +1,226 @@
+@import url("global.css");
+@import url("composants/menu-principale.css");
+@import url("composants/pied-de-page.css");
+
+/*******************************
+/* Contenu principale
+*********************************/
+
+.contenu-principale {
+    display: grid;
+    margin: 2vmin;
+    grid-template-columns: 3fr 2fr;
+    gap: 2vmin;
+    min-height: 500px;
+}
+
+@media screen and (max-width: 900px) {
+    .contenu-principale {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.affichage-description {
+    background-color: var(--color__white-ligth);
+    color: var(--color__dark);
+    padding: 10px;
+}
+
+.contenu-principale #titre {
+    width: 100%;
+    padding: 10px;
+    font-style: 14px;
+}
+
+
+
+/*******************************
+/* Galerie d'images
+*********************************/
+
+.affichage-images {
+    display: block;
+    text-align: center;
+}
+
+.affichage-images .image-principale{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vmin 3vmin;
+}
+
+.affichage-images .fa-solid {
+    display: block;
+    font-size: 6vmin;
+    background-color: transparent;
+    aspect-ratio: 1 / 1;
+    border: 1vmin solid white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.affichage-images .fa-solid:hover {
+    background-color: white;
+    color: #141414;
+}
+
+.affichage-images .image-principale img {
+    max-width: 600px;
+}
+
+.affichage-images .image-carrousel>* {
+    max-height: 70px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .affichage-images .image-principale{
+        display: flex;
+    }
+
+    .affichage-images .image-principale img {
+        width: 100%;
+    }
+
+    .affichage-images .fa-solid {
+        position: absolute;
+    }
+
+    .affichage-images .fa-arrow-left {
+        left: 0;
+    }
+    .affichage-images .fa-arrow-right{
+        right: 0;
+    }
+}
+
+/** Images de prevision sous la carrousel */
+
+.affichage-images .image-carrousel>img {
+    opacity: 0.5;
+}
+
+
+/*******************************
+/* Description
+*********************************/
+
+.affichage-description>*>*>div,
+.affichage-description h4 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+
+.affichage-description header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.affichage-description header i{
+    font-size: var(--icon__font-size);
+    padding-right: 20px;
+    color: var(--color__light-vin);
+}
+
+.affichage-description main,
+.affichage-description footer {
+    margin: 15px;
+}
+
+.affichage-description > main > * {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+/* Header */
+
+.affichage-description header button{
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--color__light-vin);
+    color: var(--color__white-ligth);
+    font-family: var(--titre__font-family);
+    letter-spacing: .2vmin;
+    font-size: calc(var(--boutons__font-size) - .7vmin);
+}
+
+.affichage-description .fa-caret-left,
+.affichage-description header a  {
+    align-self: center;
+    padding: 0;
+
+}
+
+/* Titre */
+
+.description-titre {
+    font-family: var(--titre__font-family);
+    letter-spacing: .1vmin;
+    margin-top: 15px;
+}
+
+/* PRIX */
+
+.description-prix {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.description-prix>* {
+    margin: auto 0;
+}
+
+.prix-liste > div {
+    padding: 5px;
+}
+
+.prixMise {
+    padding: 2px;
+    font-style: 11px;
+}
+
+.description-prix> * {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.description-prix button {
+    min-width: 150px;
+    padding: 5px 0px;
+    margin: 5px;
+
+
+    font-family: var(--titre__font-family);
+    font-size: var(--boutons__font-size);
+    background-color: var(--color__light-vin);
+    border-radius: 50px;
+    letter-spacing: .2vmin;
+    color: var(--color__white-ligth);
+}
+
+@media screen and (max-width: 900px) {
+    .description-prix button {
+        min-width: 100px;
+        font-size: calc(var(--boutons__font-size) * 1.5);
+    }
+}
+
+/* Footer */
+.affichage-description footer>div {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding-bottom: 20px;
+}
+.affichage-description footer p{
+    font-size: var(--details__font-size);
+}
+
+

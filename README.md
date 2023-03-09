@@ -1,3 +1,3 @@
-# kuzmin.projet_web.github.io
+# kuzmin.projet_web
 
 Readme document
